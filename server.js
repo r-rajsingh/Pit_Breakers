@@ -24,6 +24,6 @@ app.use(express.static('public'));
   response.send({ some: JSON.stringify({response:'json'}) });
 });
 
-app.listen(port, '192.168.43.150', ()=>{
+app.listen(port, ()=>{
   console.log(`server up on port ${port}`);
 });
