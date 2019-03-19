@@ -11,19 +11,16 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
- app.get('/', function(req, res)
- {
-    //res.sendFile(__dirname + '/final_test.html');
-      res.sendFile(__dirname + '/index.html');
- });
-
- app.post('/data', function(request, response)
- {
-  console.log(request.body);
-  response.contentType('json');
-  response.send({ some: JSON.stringify({response:'json'}) });
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(port, ()=>{
+app.post('/data', function(request, response){
+  console.log(request.body);
+  response.contentType('json');
+  response.send(JSON.stringify({status: "success", data: request.body}, null, 2));
+});
+
+app.listen(port, '192.168.1.103', ()=>{
   console.log(`server up on port ${port}`);
 });
