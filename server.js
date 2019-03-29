@@ -21,6 +21,6 @@ app.post('/data', function(request, response){
   response.send(JSON.stringify({status: "success", data: request.body}, null, 2));
 });
 
-app.listen(port, '192.168.1.103', ()=>{
+app.listen(port, '192.168.1.9', ()=>{
   console.log(`server up on port ${port}`);
 });

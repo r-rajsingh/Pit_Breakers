@@ -2,288 +2,85 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Pit Breakers</title>
     <link rel="icon" type="image/ico" href="http://pluspng.com/img-png/png-panda-download-2000.png" />
   </head>
-  <!-- <body bgcolor="#FF0"> -->
+
   <!-- <body style="background: url(https://i.pinimg.com/originals/83/f7/9d/83f79d556549b879790f2de50fd7cf98.jpg)"> -->
   <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-vogue-us-k6-1080x1920.jpg)"> -->
   <body style="background: url(http://hdqwalls.com/download/taylor-hill-4k-q1-1080x2160.jpg)">
-
   <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-vogue-us-k6-1920x1080.jpg)"> -->
   <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-sd-1920x1080.jpg)"> -->
   <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-4k-q1-1920x1080.jpg)"> -->
 
     <h1>
-      <br>RAJ & ABHISHEK !!<br/>
-         Here's the Data !!
+      <br>RAJ & ABHISHEK !!<br/> Here's the Data !!
     </h1>
 
-    <div id="display">
+    <div id="display">    </div>
 
-    </div>
+    <script src="./gyronorm.complete.min.js"></script>
+    <!-- <script src="./fulltilt.min.js"></script> -->
+    <!-- <script src="./gyronorm.js"></script> -->
 
-    <form action="/" method="POST">
-      <!-- <script src="./node_modules/gyronorm/dist/gyronorm.complete.min.js"></script> -->
-      <script src="./gyronorm.complete.min.js"></script>
-      <!-- <script src="./promise.min.js"></script> -->
-      <!-- <script src="./fulltilt.min.js"></script> -->
-      <!-- <script src="./gyronorm.js"></script> -->
+     <!-- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
-       <!-- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/> -->
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script type="text/javascript">
 
-      <script type="text/javascript">
+      var i=0;
+      var json_data = {
+        "linear_acc":[{"x":"0", "y":"0", "z":"0"}],
+        "gravity_acc":[{"x":"0", "y":"0", "z":"0"}],
+        "euler_angle":[{"alpha_z":"0", "beta_y":"0", "gamma_x":"0","absolute":"0"}],
+        "angular_acc":[{"alpha":"0", "beta":"0", "gamma":"0"}]
+      };
 
-        var i=0;
+      var gn = new GyroNorm();
 
-        var linear_acc= [{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                         {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0}];
+      gn.init().then(function(){
+        gn.start(function(data){
+          Process:
 
-        var gravity_acc= [{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                         {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0}];
+          json_data.linear_acc.push({"x":data.dm.x,"y":data.dm.y,"z":data.dm.z});
+          json_data.gravity_acc.push({"x":data.dm.gx,"y":data.dm.gy,"z":data.dm.gz});
+          json_data.euler_angle.push({"alpha_z":data.do.alpha, "beta_y":data.do.beta, "gamma_x":data.do.gamma,"absolute":data.do.absolute});
+          json_data.gravity_acc.push({"alpha":data.dm.alpha, "beta":data.dm.beta, "gamma":data.dm.gamma});
 
-        var euler_angle=[{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                        {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0}]
+          i++;
 
-   var angular_acc=[{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                         {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0}]
+          if(i==60){
+            document.getElementById("display").innerHTML += JSON.stringify(json_data) + "<br><br><br>";
 
-
-          var gn = new GyroNorm();
-
-          gn.init().then(function(){
-            gn.start(function(data){
-              Process:
-
-
-              linear_acc[i].linear_acc_x=data.dm.x;
-              linear_acc[i].linear_acc_y=data.dm.y;
-              linear_acc[i].linear_acc_z=data.dm.z;
-
-              gravity_acc[i].gravity_acc_x=data.dm.gx;
-              gravity_acc[i].gravity_acc_y=data.dm.gy;
-              gravity_acc[i].gravity_acc_z=data.dm.gz;
-
-              euler_angle[i].alpha_z=data.do.alpha;
-              euler_angle[i].beta_y=data.do.beta;
-              euler_angle[i].gamma_z=data.do.gamma;
-              euler_angle[i].euler_absolute=data.do.absolute;
-
-              angular_acc[i].acc_alpha=data.dm.alpha;
-              angular_acc[i].acc_beta=data.dm.beta;
-              angular_acc[i].acc_gamma=data.dm.gamma;
-
-              i++;
-
-              if(i==60)
-              {
-
-                  var server_data_1=JSON.stringify(linear_acc);
-                  var server_data_2=JSON.stringify(gravity_acc);
-                  var server_data_3=JSON.stringify(euler_angle);
-                  var server_data_4=JSON.stringify(angular_acc);
-
-                  device_data = {
-                    "linear_acc": server_data_1,
-                    "gravity_acc": server_data_2,
-                    "euler_angle": server_data_3,
-                    "angular_acc": server_data_4
-                  }
-
-                  document.getElementById("display").innerHTML += JSON.stringify(device_data) + "<br><br><br>";
-
-                  $.ajax({
-
-                    type: "POST",
-                    url: "/data",
-                    crossDomain:true,
-
-                    dataType: "json",
-                    data: {
-                      "linear_acc": server_data_1,
-                      "gravity_acc": server_data_2,
-                      "euler_angle": server_data_3,
-                      "angular_acc": server_data_4
-                    },
-                    success: function(response) {
-                      // alert(JSON.stringify(response.data));
-                      return response;
-                    },
-
-                    error: function () {
-                      alert('Error');
-                    }
-
-                  });
-                  // .done(function ( myarray ) {alert("ajax callback response:" + myarray);
-                  // });
-//////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-      linear_acc= [{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},
-                   {"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0},{"linear_acc_x":0,"linear_acc_y":0,"linear_acc_z":0}];
-
-      gravity_acc= [{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},
-                     {"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0},{"gravity_acc_x":0,"gravity_acc_y":0,"gravity_acc_z":0}];
-
-      euler_angle=[{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},
-                    {"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0},{"alpha_z":0,"beta_y":0,"gamma_x":0,"euler_absolute":0}]
-
-      angular_acc=[{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},
-                     {"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0},{"acc_alpha":0,"acc_beta":0,"acc_gamma":0}]
-                i=0;
+            $.ajax({
+              type: "POST",
+              url: "/data",
+              crossDomain:true,
+              dataType: "json",
+              data: json_data,
+              success: function(response) {
+                return response;
+              },
+              error: function () {
+                alert('Error');
               }
             });
-          }).catch(function(e){
-            console.log("error");
-          });
-      </script>
-    <form/>
+
+            json_data = {
+              "linear_acc":[{"x":"0", "y":"0", "z":"0"}],
+              "gravity_acc":[{"x":"0", "y":"0", "z":"0"}],
+              "euler_angle":[{"alpha_z":"0", "beta_y":"0", "gamma_x":"0","absolute":"0"}],
+              "angular_acc":[{"alpha":"0", "beta":"0", "gamma":"0"}]
+            };
+
+            i=0;
+          }
+        });
+      }).catch(function(e){
+        console.log("error");
+      });
+
+    </script>
   </body>
 </html>
