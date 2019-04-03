@@ -16,14 +16,13 @@
     <h1>
       <br>RAJ & ABHISHEK !!<br/> Here's the Data !!
     </h1>
-
+    <p id="demo">   </p>
     <div id="display">    </div>
 
     <script src="./gyronorm.complete.min.js"></script>
     <!-- <script src="./fulltilt.min.js"></script> -->
     <!-- <script src="./gyronorm.js"></script> -->
 
-     <!-- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/> -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
@@ -31,11 +30,28 @@
 
       var i=0;
       var json_data = {
+        "location":{"latitude":0, "longitude":0},
         "linear_acc":[{"x":"0", "y":"0", "z":"0"}],
         "gravity_acc":[{"x":"0", "y":"0", "z":"0"}],
         "euler_angle":[{"alpha_z":"0", "beta_y":"0", "gamma_x":"0","absolute":"0"}],
         "angular_acc":[{"alpha":"0", "beta":"0", "gamma":"0"}]
       };
+
+      var x = document.getElementById("demo");
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+        json_data.location.latitude = position.coords.latitude;
+        json_data.location.longitude = position.coords.longitude;
+      }
 
       var gn = new GyroNorm();
 
@@ -46,11 +62,12 @@
           json_data.linear_acc.push({"x":data.dm.x,"y":data.dm.y,"z":data.dm.z});
           json_data.gravity_acc.push({"x":data.dm.gx,"y":data.dm.gy,"z":data.dm.gz});
           json_data.euler_angle.push({"alpha_z":data.do.alpha, "beta_y":data.do.beta, "gamma_x":data.do.gamma,"absolute":data.do.absolute});
-          json_data.gravity_acc.push({"alpha":data.dm.alpha, "beta":data.dm.beta, "gamma":data.dm.gamma});
+          json_data.angular_acc.push({"alpha":data.dm.alpha, "beta":data.dm.beta, "gamma":data.dm.gamma});
 
           i++;
 
           if(i==60){
+            getLocation();
             document.getElementById("display").innerHTML += JSON.stringify(json_data) + "<br><br><br>";
 
             $.ajax({
@@ -68,6 +85,7 @@
             });
 
             json_data = {
+              "location":{"latitude":0, "longitude":0},
               "linear_acc":[{"x":"0", "y":"0", "z":"0"}],
               "gravity_acc":[{"x":"0", "y":"0", "z":"0"}],
               "euler_angle":[{"alpha_z":"0", "beta_y":"0", "gamma_x":"0","absolute":"0"}],

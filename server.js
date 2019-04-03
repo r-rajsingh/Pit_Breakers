@@ -1,11 +1,9 @@
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
-//require("babel/polyfill");
 
 const port = process.env.PORT || 1337;
 
-//app.use(multer()); // for parsing multipart/form-data
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
@@ -21,6 +19,6 @@ app.post('/data', function(request, response){
   response.send(JSON.stringify({status: "success", data: request.body}, null, 2));
 });
 
-app.listen(port, '192.168.1.9', ()=>{
+app.listen(port, ()=>{
   console.log(`server up on port ${port}`);
 });
