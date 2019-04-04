@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Pit Breakers</title>
-    <link rel="icon" type="image/ico" href="http://pluspng.com/img-png/png-panda-download-2000.png" />
+    <link rel="icon" type="image/ico" href="https://pluspng.com/img-png/png-panda-download-2000.png" />
   </head>
 
   <!-- <body style="background: url(https://i.pinimg.com/originals/83/f7/9d/83f79d556549b879790f2de50fd7cf98.jpg)"> -->
-  <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-vogue-us-k6-1080x1920.jpg)"> -->
-  <body style="background: url(http://hdqwalls.com/download/taylor-hill-4k-q1-1080x2160.jpg)">
-  <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-vogue-us-k6-1920x1080.jpg)"> -->
-  <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-sd-1920x1080.jpg)"> -->
-  <!-- <body style="background: url(http://hdqwalls.com/download/taylor-hill-4k-q1-1920x1080.jpg)"> -->
+  <!-- <body style="background: url(https://hdqwalls.com/download/taylor-hill-vogue-us-k6-1080x1920.jpg)"> -->
+  <body style="background: url(https://hdqwalls.com/download/taylor-hill-4k-q1-1080x2160.jpg)">
+  <!-- <body style="background: url(https://hdqwalls.com/download/taylor-hill-vogue-us-k6-1920x1080.jpg)"> -->
+  <!-- <body style="background: url(https://hdqwalls.com/download/taylor-hill-sd-1920x1080.jpg)"> -->
+  <!-- <body style="background: url(https://hdqwalls.com/download/taylor-hill-4k-q1-1920x1080.jpg)"> -->
 
     <h1>
       <br>RAJ & ABHISHEK !!<br/> Here's the Data !!
@@ -23,14 +23,14 @@
     <!-- <script src="./fulltilt.min.js"></script> -->
     <!-- <script src="./gyronorm.js"></script> -->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
     <script type="text/javascript">
 
       var i=0;
       var json_data = {
-        "location":{"latitude":0, "longitude":0},
+        "location":[{"latitude":0, "longitude":0}],
         "linear_acc":[{"x":"0", "y":"0", "z":"0"}],
         "gravity_acc":[{"x":"0", "y":"0", "z":"0"}],
         "euler_angle":[{"alpha_z":"0", "beta_y":"0", "gamma_x":"0","absolute":"0"}],
@@ -47,10 +47,7 @@
       }
 
       function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-        json_data.location.latitude = position.coords.latitude;
-        json_data.location.longitude = position.coords.longitude;
+          json_data.location.push({"latitude":position.coords.latitude,"longitude":position.coords.longitude});
       }
 
       var gn = new GyroNorm();
@@ -63,11 +60,10 @@
           json_data.gravity_acc.push({"x":data.dm.gx,"y":data.dm.gy,"z":data.dm.gz});
           json_data.euler_angle.push({"alpha_z":data.do.alpha, "beta_y":data.do.beta, "gamma_x":data.do.gamma,"absolute":data.do.absolute});
           json_data.angular_acc.push({"alpha":data.dm.alpha, "beta":data.dm.beta, "gamma":data.dm.gamma});
-
+          getLocation();
           i++;
-
           if(i==60){
-            getLocation();
+
             document.getElementById("display").innerHTML += JSON.stringify(json_data) + "<br><br><br>";
 
             $.ajax({
@@ -85,7 +81,7 @@
             });
 
             json_data = {
-              "location":{"latitude":0, "longitude":0},
+              "location":[{"latitude":0, "longitude":0}],
               "linear_acc":[{"x":"0", "y":"0", "z":"0"}],
               "gravity_acc":[{"x":"0", "y":"0", "z":"0"}],
               "euler_angle":[{"alpha_z":"0", "beta_y":"0", "gamma_x":"0","absolute":"0"}],
