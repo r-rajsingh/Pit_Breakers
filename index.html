@@ -2,7 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Pit Breakers</title>
+    
+    <style>
+      #map{
+        height:800px;
+        width:100%;
+      }
+    </style>
     <link rel="icon" type="image/ico" href="https://pluspng.com/img-png/png-panda-download-2000.png" />
   </head>
 
@@ -18,6 +28,8 @@
     </h1>
     <p id="demo">   </p>
     <div id="display">    </div>
+    <div id="map"></div>
+
 
     <script src="./gyronorm.complete.min.js"></script>
     <!-- <script src="./fulltilt.min.js"></script> -->
@@ -36,6 +48,13 @@
         "euler_angle":[{"alpha_z":"0", "beta_y":"0", "gamma_x":"0","absolute":"0"}],
         "angular_acc":[{"alpha":"0", "beta":"0", "gamma":"0"}]
       };
+      
+      function initMap(){
+
+       var origin = {lat: 68, lng: 97};
+        var map = new google.maps.Map(
+       document.getElementById('map'), {zoom: 4, center: origin});
+             }
 
       var x = document.getElementById("demo");
       function getLocation() {
@@ -48,6 +67,10 @@
 
       function showPosition(position) {
           json_data.location.push({"latitude":position.coords.latitude,"longitude":position.coords.longitude});
+          var gps = {lat: position.coords.latitude, lng: position.coords.lobgitude};
+        // var map = new google.maps.Map(
+        // document.getElementById('map'), {zoom: 4, center: gps});
+        var marker = new google.maps.Marker({position: gps, map: map});
       }
 
       var gn = new GyroNorm();
@@ -64,7 +87,7 @@
           i++;
           if(i==60){
 
-            document.getElementById("display").innerHTML += JSON.stringify(json_data) + "<br><br><br>";
+            //document.getElementById("display").innerHTML += JSON.stringify(json_data) + "<br><br><br>";
 
             $.ajax({
               type: "POST",
@@ -95,6 +118,9 @@
         console.log("error");
       });
 
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGV8JFrXXlHqhDAh6JrQCoq5gRJC2-zEM&callback=initMap">
     </script>
   </body>
 </html>
