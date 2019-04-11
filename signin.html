@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Sing-In</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="google-signin-client_id"content="171910132729-frmd0u6fsfondstudv2hgrracgak0qqq.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    function onSignIn(googleUser)
+    {
+      var profile=googleUser.getBasicProfile();
+      // $(".g-signin2").css("display","none");
+      // $(".data").css("display","block");
+      // $("#pic").attr('src',profile.getImageUrl());
+      // $("#email").text(profile.getEmail());
+      var mail=profile.getEmail();
+
+      var id_token = googleUser.getAuthResponse().id_token;
+
+      mail_json={"Mail_Id" : mail};
+      $.ajax({
+        type: "POST",
+        url: "/signin",
+        crossDomain:true,
+        dataType: "json",
+        data: mail_json,
+        success: function(response) {
+          return response;
+        },
+        error: function () {
+          alert('Error');
+        }
+      });
+      location.replace("http://localhost:1337/loggedin")
+      // console.log(id_token);
+      //     postAJAX('/sensor', {id_token: id_token})
+      //     .then(function(user) {
+      //         // The user is now signed in on the server too
+      //         // and the user should now have a session cookie
+      //         // for the whole site.
+      //         document.location.href = '/dashboard/' + user.username
+      //     })
+    }
+    function signOut()
+    {
+      var auth2=gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function(){
+        alert("You have been successfully signed out");
+        $(".g-signin2").css("display","block");
+        $(".data").css("display","none");
+      });
+    }
+    </script>
+
+<style>
+.g-signin2{
+  margin-left:900px;
+  margin-top:300px;
+}
+.data{
+  display:none;
+}
+  </style>
+  </head>
+<body>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div class="data">
+    <p>Profile Details</p>
+    <img id="pic" class="img-circle" width="100" height="100"/>
+    <p>Email Address</p>
+    <p id="email" class="alert alert-danger"></p>
+    <button onclick="signOut()" class ="btn btn-danger">SignOut</button>
+  </div>
+  </body>
+</html>
